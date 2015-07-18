@@ -48,9 +48,9 @@ def show_madLib():
     color= request.args.get("colorselection")
     person = request.args.get("person")
     bodypart = request.args.get("bodypart")
-    adj = request.args.get("description")
+    adj = request.args.getlist("description")
 
-    return render_template("madlib.html", colorselection=color, person=person, bodypart=bodypart, description=adj )
+    return render_template("madlib.html", colorselection=color, person=person, bodypart=bodypart, descriptions=adj )
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads" our web app
